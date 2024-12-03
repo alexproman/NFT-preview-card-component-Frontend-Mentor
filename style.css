@@ -1,0 +1,182 @@
+:root {
+    --SoftBlue: #8bacda;
+    --Cyan: #00fff7;
+    --mainBG: #0d192b;
+    --cardBG: #14253d;
+    --line: #2f415b;
+    --White: #ffffff;
+    --border-radius: 20px;
+    --small-border-radius: 10px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Outfit", serif;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: var(--mainBG);
+    display: flex;
+    overflow: hidden;
+}
+
+p.para {
+    font-size: 18px;
+}
+
+.container {
+    width: 320px;
+    height: 560px;
+    margin: auto;
+    background: var(--cardBG);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--line);
+}
+
+.hero {
+    position: relative;
+    width: 270px;
+    height: 270px;
+    background: var(--Cyan);
+    border-radius: var(--small-border-radius);
+    margin: 20px auto;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.hero img {
+    width: 100%;
+    transition: var(--transition);
+}
+
+.hero .view-icon {
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: var(--transition);
+}
+
+.hero span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--Cyan);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.hero:hover .view-icon {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.hero:hover span {
+    opacity: 0.4;
+}
+
+.text-content {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.text-content .title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 2;
+    color: var(--White);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.text-content .title:hover {
+    color: var(--Cyan);
+}
+
+.text-content p {
+    line-height: 1.6;
+    color: var(--SoftBlue);
+    font-weight: 300;
+}
+
+.views {
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+}
+
+.views div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--SoftBlue);
+}
+
+.views div:nth-child(1) p {
+    color: var(--Cyan);
+    font-weight: 400;
+}
+
+.avatar {
+    
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 10px 30px;
+}
+
+.avatar img {
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--White);
+}
+
+.avatar p {
+    color: var(--SoftBlue);
+    font-weight: 400;
+}
+
+.avatar p span {
+    color: var(--White);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.avatar p span:hover {
+    color: var(--Cyan);
+}
+
+@media screen and (min-width: 678px) {
+    .container {
+        width: 320px;
+        height: 550px;
+    }
+}
+
+.attribution {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    color: #b9d1f1;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: var(--SoftBlue);
+    text-decoration: none;
+}
